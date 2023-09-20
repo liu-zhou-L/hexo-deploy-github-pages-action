@@ -76,15 +76,18 @@ git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --global --add safe.directory "${CURRENT_DIR}"
 
-git remote add origin "${REPOSITORY_PATH}"
-git checkout --orphan "${TARGET_BRANCH}"
+#git remote add origin "${REPOSITORY_PATH}"
+#git checkout --orphan "${TARGET_BRANCH}"
 
-git add .
+#git add .
 
-echo '>_ Start Commit ...'
-git commit --allow-empty -m "Build and Deploy from Github Actions"
+#echo '>_ Start Commit ...'
+#git commit --allow-empty -m "Build and Deploy from Github Actions"
 
-echo '>_ Start Push ...'
-git push -u origin "${TARGET_BRANCH}" --force
+#echo '>_ Start Push ...'
+#git push -u origin "${TARGET_BRANCH}" --force
+
+echo '>_ Start hexo deploying ...'
+hexo deploy
 
 echo ">_ Deployment successful"
