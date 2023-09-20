@@ -73,7 +73,7 @@ echo ">_ Config git ..."
 
 git init
 git config --global user.name "${GITHUB_ACTOR}"
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global user.email "liu_zhou_zhou@163.com"
 git config --global --add safe.directory "${CURRENT_DIR}"
 
 #git remote add origin "${REPOSITORY_PATH}"
