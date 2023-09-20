@@ -87,6 +87,9 @@ git config --global --add safe.directory "${CURRENT_DIR}"
 #echo '>_ Start Push ...'
 #git push -u origin "${TARGET_BRANCH}" --force
 
+echo '>_ Start hexo cleaning ...'
+npx hexo clean
+
 echo '>_ Start hexo deploying ...'
 npx hexo deploy
 
