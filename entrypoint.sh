@@ -51,14 +51,13 @@ REPOSITORY_PATH="https://x-access-token:${PERSONAL_TOKEN}@github.com/${TARGET_RE
 
 
 echo ">_ Install NPM dependencies ..."
-npm install hexo-cli -g
 npm install
 
 echo ">_ Clean cache files ..."
-hexo clean
+npxhexo clean
 
 echo ">_ Generate file ..."
-hexo generate
+npxhexo generate
 
 cd "${TARGET_PUBLISH_DIR}"
 
@@ -97,6 +96,6 @@ git config --global user.name "${GITHUB_ACTOR}"
 #git push -u origin "${TARGET_BRANCH}" --force
 
 echo '>_ Start hexo deploying ...'
-hexo deploy
+npx hexo deploy
 
 echo ">_ Deployment successful"
