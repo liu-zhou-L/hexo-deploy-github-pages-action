@@ -88,6 +88,6 @@ git config --global --add safe.directory "${CURRENT_DIR}"
 #git push -u origin "${TARGET_BRANCH}" --force
 
 echo '>_ Start hexo deploying ...'
-hexo deploy
+npx hexo deploy
 
 echo ">_ Deployment successful"
