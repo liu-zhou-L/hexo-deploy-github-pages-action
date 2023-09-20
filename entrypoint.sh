@@ -71,10 +71,18 @@ fi
 
 echo ">_ Config git ..."
 
-git init
+mkdir -p ~/.ssh/
+echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --global user.name "${GITHUB_ACTOR}"
-git config --global user.email "liu_zhou_zhou@163.com"
-git config --global --add safe.directory "${CURRENT_DIR}"
+
+#git init
+#git config --global user.name "${GITHUB_ACTOR}"
+#git config --global user.email "liu_zhou_zhou@163.com"
+#git config --global --add safe.directory "${CURRENT_DIR}"
 
 #git remote add origin "${REPOSITORY_PATH}"
 #git checkout --orphan "${TARGET_BRANCH}"
@@ -86,9 +94,6 @@ git config --global --add safe.directory "${CURRENT_DIR}"
 
 #echo '>_ Start Push ...'
 #git push -u origin "${TARGET_BRANCH}" --force
-
-echo '>_ Start hexo cleaning ...'
-npx hexo clean
 
 echo '>_ Start hexo deploying ...'
 npx hexo deploy
