@@ -54,10 +54,10 @@ echo ">_ Install NPM dependencies ..."
 npm install
 
 echo ">_ Clean cache files ..."
-npxhexo clean
+npx hexo clean
 
 echo ">_ Generate file ..."
-npxhexo generate
+npx hexo generate
 
 cd "${TARGET_PUBLISH_DIR}"
 
